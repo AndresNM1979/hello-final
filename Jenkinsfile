@@ -63,7 +63,7 @@ pipeline {
         stage('Security') {
             steps {
                 echo 'Se realiza el analisis de seguridad en contenedor ..'
-                sh 'trivy image --format=json --output=trivy-image.json hello-spring-test:latest'
+                sh 'trivy image --format=json --output=trivy-image.json hello-final:latest'
             }
             post {
                 always {
@@ -85,7 +85,7 @@ pipeline {
             steps {
                 echo 'Se ha archivado el artefacto, desplegando ..'
                 //        sh 'docker-compose up -d'
-                sshagent(['appKey']) {
+                sshagent(crdentials: ['appKey']) {
                    sh "ssh -o StrictHostKeyChecking=no app@10.250.2.3 'cd hello-spring && docker-compose pull && docker-compose up -d'"
                 }
             }
