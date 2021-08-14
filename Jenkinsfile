@@ -3,6 +3,9 @@ import java.util.concurrent.CompletionStage
 
 pipeline {
     agent any
+    tools {
+        jdk 'jdk-16.0.2'
+    }
     stages {
         stage('Test') {
             steps {
