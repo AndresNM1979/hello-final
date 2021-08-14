@@ -2,7 +2,7 @@
 FROM openjdk:11 AS base
 WORKDIR /opt/hello-final
 COPY ./ ./
-RUN ./hello-final
+RUN ./gradlew assemble
 
 # Runtime stage
 FROM amazoncorretto:11
