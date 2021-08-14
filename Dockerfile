@@ -1,5 +1,5 @@
 # Build stage
-FROM openjdk:16.0.2 AS base
+FROM openjdk:16 AS base
 WORKDIR /opt/hello-gradle
 COPY ./ ./
 RUN ./gradlew assemble
