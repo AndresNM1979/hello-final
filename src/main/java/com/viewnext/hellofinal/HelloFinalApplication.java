@@ -20,6 +20,5 @@ public class HelloFinalApplication {
 
 	@GetMapping("/despedida")
 	public String despedida() {
-		return "Esta es la practica de finalizacion del curso, hasta pronto compañeros";
-	}
+		return "Esta es la practica de finalizacion del curso, hasta pronto compañeros "; }
 }

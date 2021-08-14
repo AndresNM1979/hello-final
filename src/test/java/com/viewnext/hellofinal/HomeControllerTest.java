@@ -20,7 +20,7 @@ class HomeControllerTest {
     @Test
     void hola() {
         assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/hola", String.class))
-                .isEqualTo("Hola, esta ha sido el final del curso.");
+                .isEqualTo("Hola, esta ha sido el final del curso. ");
 
     }
 }
